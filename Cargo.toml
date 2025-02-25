@@ -1,0 +1,17 @@
+[workspace]
+members = ["kyrie-bot", "kyrie-cache", "kyrie-config", "kyrie-core", "kyrie-db", "kyrie-macros"]
+default-members = ["kyrie-core"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["extra <extr4ditad0@proton.me>"]
+edition = "2024"
+description = "simple bot raid"
+repository = "https://github.com/extraditado/kyrie"
+
+[workspace.dependencies]
+tracing = "0.1"
+
+[workspace.lints.clippy]
+all = { level = "allow", priority = 3 }

@@ -1,0 +1,13 @@
+[package]
+name = "kyrie-cache"
+
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+description.workspace = true
+repository.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

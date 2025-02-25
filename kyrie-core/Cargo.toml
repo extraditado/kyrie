@@ -1,0 +1,16 @@
+[package]
+name = "kyrie-core"
+
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+description.workspace = true
+repository.workspace = true
+
+[dependencies]
+tokio = { version = "1.43", features = ["macros", "rt-multi-thread"] }
+kyrie-bot = { path = "../kyrie-bot" }
+anyhow = "1.0"
+
+[lints]
+workspace = true
