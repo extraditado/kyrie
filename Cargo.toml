@@ -1,5 +1,12 @@
 [workspace]
-members = ["kyrie-bot", "kyrie-cache", "kyrie-config", "kyrie-core", "kyrie-db", "kyrie-macros"]
+members = [
+    "kyrie-bot",
+    "kyrie-cache",
+    "kyrie-config",
+    "kyrie-core",
+    "kyrie-db",
+    "kyrie-macros",
+]
 default-members = ["kyrie-core"]
 resolver = "3"
 
@@ -11,7 +18,6 @@ description = "simple bot raid"
 repository = "https://github.com/extraditado/kyrie"
 
 [workspace.dependencies]
-tracing = "0.1"
 
 [workspace.lints.clippy]
 all = { level = "allow", priority = 3 }
