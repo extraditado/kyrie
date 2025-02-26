@@ -9,7 +9,7 @@ repository.workspace = true
 
 [dependencies]
 tokio = { version = "1.43", features = ["rt-multi-thread", "macros"] }
-tracing = { workspace = true }
+tracing = "0.1"
 anyhow = "1.0"
 serenity = "0.12"
 poise = "0.6"
