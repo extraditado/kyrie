@@ -6,3 +6,18 @@ services:
       memlock: -1
     ports: 
       - "6379:6379"
+
+  postgres:
+    image: "postgres:17"
+    container_name: Postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DATABASE_USR}
+      POSTGRES_PASSWORD: ${DATABASE_PWD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

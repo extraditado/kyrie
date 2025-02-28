@@ -1,10 +1,9 @@
 mod errors;
 
-use std::time::Duration;
-
 use errors::CacheError;
 use r2d2_redis::{RedisConnectionManager, r2d2, redis};
 use serde::{Serialize, de::DeserializeOwned};
+use std::time::Duration;
 
 #[derive(Clone)]
 pub struct RedisCache {
