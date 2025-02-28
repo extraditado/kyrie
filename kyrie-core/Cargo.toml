@@ -8,8 +8,9 @@ description.workspace = true
 repository.workspace = true
 
 [dependencies]
-tokio = { version = "1.43", features = ["macros", "rt-multi-thread"] }
 kyrie-bot = { path = "../kyrie-bot" }
+
+tokio = { version = "1.43", features = ["macros", "rt-multi-thread"] }
 anyhow = "1.0"
 
 [lints]

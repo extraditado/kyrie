@@ -10,7 +10,6 @@ repository.workspace = true
 [dependencies]
 sqlx = { version = "0.8", features = ["sqlite", "runtime-tokio-native-tls"] }
 thiserror = "2.0"
-async-trait = "0.1"
 
 [lints]
 workspace = true

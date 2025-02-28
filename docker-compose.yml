@@ -1,0 +1,8 @@
+services:
+  dragonfly:
+    image: "docker.dragonflydb.io/dragonflydb/dragonfly"
+    container_name: Dragonfly
+    ulimits:
+      memlock: -1
+    ports: 
+      - "6379:6379"

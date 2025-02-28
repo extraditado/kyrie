@@ -1,9 +1,11 @@
 use sqlx::{
     Sqlite, SqlitePool,
-    sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePoolOptions, SqliteSynchronous},
+    sqlite::{SqliteConnectOptions, SqlitePoolOptions},
 };
 use std::{str::FromStr, time::Duration};
 use thiserror::Error;
+
+pub use sqlx::sqlite::{SqliteJournalMode, SqliteSynchronous};
 
 #[derive(Debug, Clone)]
 pub struct DatabaseConfig {
