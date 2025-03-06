@@ -1,4 +1,4 @@
 {
-    "recommendations": [],
-    "unwantedRecommendations": []
+  "recommendations": ["redhat.vscode-yaml", "tamasfe.even-better-toml"],
+  "unwantedRecommendations": []
 }

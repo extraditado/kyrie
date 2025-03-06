@@ -4,7 +4,7 @@ services:
     container_name: Dragonfly
     ulimits:
       memlock: -1
-    ports: 
+    ports:
       - "6379:6379"
 
   postgres:

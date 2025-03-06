@@ -7,6 +7,8 @@ use sqlx::{
 };
 use std::{str::FromStr, time::Duration};
 
+pub use sqlx::types::{Json, JsonRawValue, JsonValue, Text, Type};
+
 #[derive(Debug, Clone)]
 pub struct DatabaseConfig {
     pub url: String,
@@ -54,6 +56,7 @@ impl Database {
             .fold(sqlx::query(query), |q, param| q.bind(*param));
 
         let result = query.execute(self.pool()).await?;
+
         Ok(result.rows_affected())
     }
 
@@ -103,9 +106,14 @@ impl Database {
     }
 
     /// Checks if the database connection is alive.
-    pub async fn check_connection(&self) -> Result<(), DatabaseError> {
-        sqlx::query("SELECT 1").execute(self.pool()).await?;
-        Ok(())
+    pub async fn check_connection(&self) -> Result<bool, DatabaseError> {
+        let result = sqlx::query("SELECT 1")
+            .fetch_one(self.pool())
+            .await
+            .map(|_| ())
+            .map_err(|_| DatabaseError::ConnectionError);
+
+        Ok(result.is_ok())
     }
 
     /// Returns the number of connections in the `pool`.

@@ -1,4 +1,4 @@
-!.env.example
+kyrie.config.yaml
 .env
 
 /target
